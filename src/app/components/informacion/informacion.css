@@ -1,0 +1,14 @@
+.img-gasto {
+  width: 300px;      /* ancho */
+  height: 180px;     /* alto */
+  object-fit: cover; /* recorta sin deformar */
+}
+ul {
+  list-style: none;   /* quita las viñetas */
+  padding: 0;         /* quita espacio izquierdo */
+  margin: 0;
+}
+
+li {
+  margin-bottom: 20px; /* espacio entre tarjetas */
+}

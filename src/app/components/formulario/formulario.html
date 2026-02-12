@@ -1,0 +1,66 @@
+<form (ngSubmit)="agregar()">
+  <div class="form-group">
+    <h1 class="text-center">Facturas Gastos</h1>
+
+    <!-- RUC -->
+    <div class="input-group">
+      <label>RUC</label>
+      <input
+        type="text"
+        class="form-control"
+        name="ruc"
+        [(ngModel)]="ruc"
+        (ngModelChange)="onRucChange()"
+        maxlength="13"
+        required>
+
+      <!-- Mensaje de error -->
+      <small class="text-danger" *ngIf="!rucValido">
+      RUC inválido
+      </small>
+    </div>
+
+    <!-- Valor -->
+    <div class="input-group">
+      <label>Valor de factura</label>
+      <input
+        type="number"
+        class="form-control"
+        name="valor"
+        [(ngModel)]="valor"
+        min="0"
+        required>
+    </div>
+
+    <!-- Tipo -->
+    <div class="input-group">
+      <label>Tipo de gasto</label>
+      <select
+        class="form-select"
+        name="tipo"
+        [(ngModel)]="tipo"
+        required>
+        <option value="">Seleccione</option>
+        <option value="Salud">Salud</option>
+        <option value="Vivienda">Vivienda</option>
+        <option value="Educacion">Educación</option>
+        <option value="Ninguno">Ninguno</option>
+      </select>
+    </div>
+
+    <!-- Botón -->
+    <button
+      type="submit"
+      [disabled]="!rucValido || !ruc || !tipo || valor <= 0">
+      Agregar
+    </button>
+  </div>
+
+  <!-- DEBUG -->
+  <div>
+    <p>RUC: {{ ruc }}</p>
+    <p>VALOR: {{ valor }}</p>
+    <p>TIPO: {{ tipo }}</p>
+    <p>RUC válido: {{ rucValido }}</p>
+  </div>
+</form>

@@ -1,0 +1,71 @@
+<h2>Impuesto a la Renta 2023</h2>
+
+<form>
+  <label>Cédula</label>
+  <input type="text" [(ngModel)]="cedula" name="cedula">
+
+  <label>Sueldo anual</label>
+  <input
+    type="number"
+    [ngModel]="sueldo"
+    (ngModelChange)="actualizarSueldo($event)"
+    name="sueldo">
+
+  <h3>Gastos Personales</h3>
+
+  <label>Alimentación</label>
+  <input
+    type="number"
+    [ngModel]="alimentacion"
+    (ngModelChange)="actualizarGasto('alimentacion', $event)"
+    name="alimentacion">
+
+  <label>Vivienda</label>
+  <input
+    type="number"
+    [ngModel]="vivienda"
+    (ngModelChange)="actualizarGasto('vivienda', $event)"
+    name="vivienda">
+
+  <label>Educación</label>
+  <input
+    type="number"
+    [ngModel]="educacion"
+    (ngModelChange)="actualizarGasto('educacion', $event)"
+    name="educacion">
+
+  <label>Vestimenta</label>
+  <input
+    type="number"
+    [ngModel]="vestimenta"
+    (ngModelChange)="actualizarGasto('vestimenta', $event)"
+    name="vestimenta">
+
+  <label>Salud</label>
+  <input
+    type="number"
+    [ngModel]="salud"
+    (ngModelChange)="actualizarGasto('salud', $event)"
+    name="salud">
+
+  <!-- MENSAJE CUANDO SUPERA EL SUELDO -->
+  <p
+    *ngIf="totalGastosActual > sueldo && sueldo > 0"
+    style="color:red; font-weight:bold">
+     Los gastos superan el sueldo anual
+  </p>
+
+  <p><b>Total gastos actuales:</b> {{ totalGastosActual }}</p>
+  <p><b>Disponible:</b> {{ sueldo - totalGastosActual }}</p>
+
+  <button type="button" (click)="calcularImpuesto()">Calcular</button>
+</form>
+
+<h3>Resultado</h3>
+<p>Total gastos deducibles: {{ totalGastosDeducibles }}</p>
+<p>Base imponible: {{ baseImponible }}</p>
+<p>Excedente: {{ excedente }}</p>
+<p>Impuesto a pagar: {{ impuestoRenta }}</p>
+
+<h3>Resultado en JSON</h3>
+<pre>{{ resultados | json }}</pre>

@@ -1,0 +1,15 @@
+form {
+  width: 400px;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+  color: black !important; /* quita el azul de Bootstrap */
+}
+
+/* Centrar el botón */
+button {
+  display: block;
+  margin: 20px auto;
+}

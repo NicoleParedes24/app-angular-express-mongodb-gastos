@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center">Usuarios</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of usuarios; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ u.name }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

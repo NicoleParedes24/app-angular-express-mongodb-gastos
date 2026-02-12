@@ -1,0 +1,28 @@
+/* Contenedor del menú */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+/* Enlaces */
+.menu a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  padding-bottom: 4px;
+}
+
+/* Hover */
+.menu a:hover {
+  border-bottom: 2px solid #000;
+}
+
+/* Enlace activo */
+.menu a.router-link-active {
+  border-bottom: 2px solid #000;
+  font-weight: 600;
+}
